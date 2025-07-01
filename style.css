@@ -1,0 +1,394 @@
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: clamp(14px, 1.2vw, 18px);
+    font-family: 'Black Ops One';
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+body {
+    width: 100dvw;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    height: 3em;
+    background-color: #575757ae;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.navbar ul {
+    align-items: center;
+    display: flex;
+}
+
+.navbar li {
+    list-style-type: none;
+}
+
+.navbar a {
+    font-size: 2dvh;
+    color: #808d38;
+    padding: 1em 1.2em;
+    text-decoration: none;
+    transition: .2s ease-in-out;
+}
+
+.navbar a:hover {
+    color: white;
+    background-color: #808d38;
+    letter-spacing: 3px;
+    transform: scale(1.2);
+
+}
+
+.logo {
+    font-size: 1em;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.logo:hover {}
+
+/* MAIN CONTENT */
+.bg1 {
+    background-image: url(img/WW2-BG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg2 {
+    background-image: url(img/ColdWar.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg3 {
+    background-image: url(img/Modern.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.title {
+    color: #eaeaea;
+    text-align: center;
+    text-shadow: 3px black;
+    font-size: 1.2rem;
+    padding: 30px;
+    padding-top: 60px;
+    letter-spacing: 5px;
+    background: linear-gradient(to right, #4b5320, #4b5416);
+}
+
+.content-card {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.card {
+    width: 400px;
+    aspect-ratio: 1 / 0.7;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.card .image-box {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.card .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 90%;
+    border-radius: inherit;
+    transition: .5s ease-in-out;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid white;
+    border-radius: inherit;
+    opacity: 0;
+    transition: .4s ease-in-out;
+}
+
+.card:hover img {
+    filter: grayscale(1) brightness(0.4);
+}
+
+.card:hover::after {
+    opacity: 1;
+    inset: 20px;
+}
+
+.content {
+    color: white;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.content h1,
+.content p {
+    font-size: 2dvh;
+    opacity: 0;
+    transition: .4s .2s ease;
+}
+
+.card:hover .content h1 {
+    letter-spacing: 4px;
+    font-weight: bolder;
+    opacity: 1;
+}
+
+.card:hover .content p {
+    opacity: 1;
+}
+
+
+
+/* TANK INFO */
+.desc h1 {
+    font-size: 2rem;
+}
+
+.desc p {
+    font-size: 1rem;
+}
+
+/* SETTING */
+
+/* INFO/WIKI */
+.card-info {
+    width: 400px;
+    aspect-ratio: 1 / 0.7;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.card-info .image-box {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.card-info .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 90%;
+    border-radius: inherit;
+    transition: .5s ease-in-out;
+}
+
+.card-info:hover {
+    transform: scale(1.1);
+}
+
+.card-info .image-box img:hover {
+    border-radius: 50px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.457);
+}
+
+.card-info:hover:active {
+    transform: scale(.9);
+}
+
+/* tank info */
+.tinfo {
+    display: grid;
+    background: linear-gradient(to bottom right, rgba(0, 48, 135, 1), rgba(0, 153, 255, 1));
+}
+
+.tinfo img {
+    margin: 30px;
+    border-radius: 2em;
+    height: auto;
+    max-width: 20em;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.desc {
+    color: white;
+    padding: 50px;
+
+}
+
+.desc h1 {
+    font-size: 2rem;
+    padding: 5px;
+    border-radius: 10px;
+    background: linear-gradient(to right, rgb(23, 31, 87), rgb(41, 53, 145));
+    width: fit-content;
+}
+
+.desc p {
+    padding: 10px;
+    font-size: 1em;
+}
+
+/* tank desc */
+.tdesc {
+    padding: 20px;
+    background-color: #292929;
+}
+
+
+.tdesc ul {
+    padding: 30px;
+    width: fit-content;
+    font-size: 1.2rem;
+    padding-left: 20px;
+}
+
+.tdesc li {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    list-style-position: inside;
+}
+
+.tdesc h1 {
+    background-color: #333;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 2rem;
+    letter-spacing: 5px;
+}
+
+.tdesc pre {
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+/* table info */
+.armor-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.armor-table th,
+.armor-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.armor-table thead {
+    background-color: #333;
+}
+
+
+/* MOBILE */
+@media (max-width: 600) {
+    .card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 2px solid white;
+        border-radius: inherit;
+        opacity: 0;
+        transition: .4s ease-in-out;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-focus-ring-color: transparent;
+        outline: none;
+        user-select: none;
+    }
+
+    .card:active img {
+        filter: grayscale(1) brightness(0.4);
+        -webkit-tap-highlight-color: transparent;
+        -webkit-focus-ring-color: transparent;
+        outline: none;
+        user-select: none;
+    }
+
+    .card:active::after {
+        opacity: 1;
+        inset: 20px;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-focus-ring-color: transparent;
+        outline: none;
+        user-select: none;
+    }
+
+    .card:active .content h1 {
+        opacity: 1;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-focus-ring-color: transparent;
+        outline: none;
+        user-select: none;
+    }
+
+    .card:active .content p {
+        opacity: 1;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-focus-ring-color: transparent;
+        outline: none;
+        user-select: none;
+    }
+
+    .tinfo {
+        display: grid;
+        flex-direction: column;
+        background: linear-gradient(to bottom right, rgba(0, 48, 135, 1), rgba(0, 153, 255, 1));
+    }
+
+    .armor-table thead {
+        display: none;
+    }
+
+    .armor-table tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .armor-table td {
+        display: block;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .armor-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        text-align: left;
+        font-weight: bold;
+    }
+
+}
